@@ -44,10 +44,10 @@ const moveplayer = (move) => {
     const oldRow = playerPos.row;
     const oldCol = playerPos.col;
 
-    if (move == 'up') { playerPos.row = (playerPos.row -1)};
-    if (move == 'down') { playerPos.row = (playerPos.row + 1)};
-    if (move == 'left') { playerPos.col = (playerPos.col - 1)};
-    if (move == 'right') { playerPos.col = (playerPos.col + 1)};
+    if (move == 'up') playerPos.row -= 1;
+    if (move == 'down') playerPos.row += 1;
+    if (move == 'left') playerPos.col -= 1;
+    if (move == 'right') playerPos.col += 1;
 
     myMap[oldRow][oldCol] = ['fl'];
     myMap[playerPos.row][playerPos.col] = ['pl']
@@ -59,11 +59,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
     initTheBoard();
 })
 
-document.addEventListener('keypress', (e) => {
+document.addEventListener('keydown', (e) => {
+    console.log("Key pressed:", e.key, e.code);
+    if (e.code === 'KeyW' || e.key === 'ArrowUp') return moveplayer('up');
+    if (e.code === 'KeyS' || e.key === 'ArrowDown') return moveplayer('down');
+    if (e.code === 'KeyD' || e.key === 'ArrowRight') return moveplayer('right');
+    if (e.code === 'KeyA' || e.key === 'ArrowLeft') return moveplayer('left');
 
-    if (e.key == 'w') return moveplayer('up');
-    if (e.key == 's') return moveplayer('down');
-    if (e.key == 'd') return moveplayer('right');
-    if (e.key == 'a') return moveplayer('left');
-    
 })
