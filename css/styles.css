@@ -1,0 +1,61 @@
+body {
+    background-color: #333;
+}
+
+.container {
+    display: grid;
+    gap: none;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+}
+
+#board {
+    width: 608px;
+    height: 512px;
+    background-color: none;
+    display: grid;
+    grid-template-columns: repeat(19, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    border: 1px solid #222;
+}
+
+#board > div {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    gap: none;
+    border: none
+}
+
+
+/*  Legend
+    W = Wall
+    B = Movable block
+    P = Player starting position
+    G = Goal area for the blocks
+*/
+
+.f {
+    background-image: url("../img/floor.png");
+}
+
+.wa {
+ background-size: 100%;
+ background-repeat: no-repeat;
+ background-image: url("../img/wall.png");
+
+}
+
+.bl {
+background-image: url("../img/pushblock.png");
+}
+
+.pl {
+background-image: url("../img/player.png");
+}
+
+.go {
+    background-image: url("../img/goal.png");
+}
