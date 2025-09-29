@@ -37,25 +37,25 @@ body {
     G = Goal area for the blocks
 */
 
-.f {
+/* Floor tiles */
+.fl {
     background-image: url("../img/floor.png");
 }
-
+/* Wall */
 .wa {
  background-size: 100%;
  background-repeat: no-repeat;
  background-image: url("../img/wall.png");
-
 }
-
+/* Moveable block */
 .bl {
 background-image: url("../img/pushblock.png");
 }
-
+/* Player */
 .pl {
 background-image: url("../img/player.png");
 }
-
+/* Goal tiles */
 .go {
     background-image: url("../img/goal.png");
 }
