@@ -1,5 +1,9 @@
 import {tileMap01} from "./SokobanBase.js";
 
+function resetGame() {
+
+  
+}
 let myMap = tileMap01.mapGrid;
 const myHeight = tileMap01.height;
 const myWidth = tileMap01.width;
@@ -31,11 +35,40 @@ const initTheBoard = () => {
     for (let rows =0; rows<myHeight; rows++){
 
         for( let cols = 0; cols < myWidth; cols++){
-            let newEl = document.createElement("div")
+            let newEl = document.createElement("div");
             newEl.classList.add("boardgrid", myMap[rows][cols]);
             board.appendChild(newEl);
         }
     }
+}
+
+function startGame() {
+  
+  const dashboard = document.createElement("div");
+  dashboard.id = "dashboard";
+  dashboard.classList.add("overlay")
+
+  const title = document.createElement("h1");
+  title.innerText = "Sokoban";
+  dashboard.appendChild(title);
+
+  const stycke = document.createElement("p");
+  stycke.innerText = "Made by JC";
+  stycke.classList.add("stycke");
+  dashboard.appendChild(stycke);
+
+  const startKnapp = document.createElement("button");
+  startKnapp.innerText = "Start";
+  startKnapp.addEventListener("click", () => {
+
+    dashboard.remove();
+    initTheBoard();
+  
+  })
+  dashboard.appendChild(startKnapp);
+
+
+  document.body.appendChild(dashboard);
 }
 
 function getDirection(move) {
@@ -107,15 +140,17 @@ const moveplayer = (move) => {
     initTheBoard();
 
     if (checkWin()) {
-      
-      alert("🎉 Du vann!");
+      startGame();
     };
 
 }
 
 
+
+
 document.addEventListener('DOMContentLoaded', (e) => {
-    initTheBoard();
+    /* initTheBoard(); */
+    startGame();
 })
 
 document.addEventListener('keydown', (e) => {

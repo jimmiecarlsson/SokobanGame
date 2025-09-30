@@ -11,6 +11,49 @@ body {
     
 }
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(117, 66, 66, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1000;
+  gap: 1rem;
+}
+
+h1 {
+    font-size: 5rem;
+    font-family: fantasy;
+    font-variant: small-caps;
+    letter-spacing: 1rem;
+    margin-bottom: 0;
+}
+
+.stycke {
+    font-size: 1rem;
+    font-family: fantasy;
+    margin-top: 0;
+}
+
+button {
+    height: 5rem;
+    width: 10rem;
+    font-size: 3rem;
+    font-family: fantasy;
+    color: #822121;
+    border-radius: 25px;
+    border: none;
+
+}
+
+button:hover {
+    height: 5rem;
+    width: 14rem;
+}
+
 #board {
     width: 1216px;
     height: 1024px;
