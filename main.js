@@ -107,6 +107,7 @@ const moveplayer = (move) => {
     initTheBoard();
 
     if (checkWin()) {
+      
       alert("🎉 Du vann!");
     };
 
