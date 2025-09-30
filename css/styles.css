@@ -7,35 +7,27 @@ body {
     gap: none;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 90vh;
     
 }
 
 #board {
-    width: 608px;
-    height: 512px;
+    width: 1216px;
+    height: 1024px;
     background-color: none;
     display: grid;
     grid-template-columns: repeat(19, 1fr);
     grid-template-rows: repeat(16, 1fr);
-    border: 1px solid #222;
+    border: 15px solid #822121;
 }
 
 #board > div {
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     gap: none;
     border: none
 }
-
-
-/*  Legend
-    W = Wall
-    B = Movable block
-    P = Player starting position
-    G = Goal area for the blocks
-*/
 
 /* Floor tiles */
 .fl {
@@ -48,12 +40,15 @@ body {
  background-image: url("../img/wall.png");
 }
 /* Moveable block */
-.bl {
+.bl, .bl_go {
 background-image: url("../img/pushblock.png");
 }
 /* Player */
 .pl {
 background-image: url("../img/player.png");
+}
+.pl_go {
+background-image: url("../img/player-go.png");
 }
 /* Goal tiles */
 .go {
